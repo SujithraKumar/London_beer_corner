@@ -12,16 +12,16 @@
 
 
 	<!-- Modal -->
-	<div class="modal fade" id="ViewProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal fade" id="ViewProduct" ng-if="ShowModal"  role="dialog" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="pic_area col-sm-7">
 
-					<img class="card-img-top set-margin" err-src="app/default.jpg" src="app/default.jpg" width="200" height="200">
+					<img class=" set-margin" err-src="app/default.jpg" src="app/default.jpg" width="200" height="200">
 
 				</div>
 				<div class="txt_area col-sm-5">
-					<button type="button" class="close modal-close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<button type="button" class="close modal-close " ng-click="closeModal()"  aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
 					<div>
 						<div class="user-block feed_details_header">
@@ -57,32 +57,7 @@
 	</div>
 
 
-	<!--<div id="ViewProduct" class="modal modal-long">
-		<div class="modal-content">
-			<div class="pic_area col-sm-7">
-
-				<img class="card-img-top" err-src="app/default.jpg" src="app/default.jpg" width="285" height="200">
-				<p ng-bind-html="$parent.GetMediaContent(SelectedComment.Media,2)"></p>
-			</div>
-
-			<div class="txt_area col-sm-5">
-				<button type="button" class="close modal-close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-				<div>
-					<div class="user-block feed_details_header">
-						<img class="img-circle" alt="User Image">
-						<span class="username"><a ] class="titleCase">sammm</a></span>
-					</div>
-
-
-				</div>
-
-
-
-
-			</div>
-		</div>
-	</div>-->
+	
 
 </section>
 
@@ -91,7 +66,11 @@
 	$(document).ready(function () {
 		$('.modal').modal();
 
-
+		$('#ViewProduct').modal(
+			{
+				dismissible: true
+			}
+		);
 	});
 
 </script>

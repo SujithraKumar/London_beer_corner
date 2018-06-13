@@ -2,7 +2,7 @@
 	background-color: #b1b1b1;
 }
 
-#toolbar {
+.toolbar {
 	background-color: #ebebeb;
 	line-height: 35px;
 	height: 45px;
@@ -23,12 +23,21 @@ p {
 	
 }
 
+.filterbar {
+	
+	line-height: 35px;
+	height: 45px;
+	margin-bottom: 10px;
+}
 
+
+.productInput {
+	height: 25px;
+}
 
 #toolbar.labelAlign {
 	margin-top: 2px;
 	text-align: center;
-	
 }
 
 .pagealign {

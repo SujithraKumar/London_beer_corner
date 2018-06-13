@@ -30,15 +30,25 @@
 </head>
 
 <body ng-controller="MainController" class=" ">
-	<div id="toolbar">
+	<div class="toolbar">
 		<div class="alignCenter">
 			<label class="labelAlign">London Beer Corner</label>
-					
+
 		</div>
 
+		
+		
 	</div>
+	<div class="filterbar">
+		<label>Product</label>
+		<input type="text" class="productInput" ng-model="productName" placeholder="productName" />
+		<label>Rating</label>
+		<select ng-options="item for item in Ratings " ng-model="rating"></select>
+	</div>
+
+
 	<div class="feed_item">
-		<div ng-repeat="feed in ProductsList | startFrom:currentPage*pageSize | limitTo:pageSize  track by $index" ">
+		<div ng-repeat="feed in ProductsList |filter:{beer : productName} |filter :{average_review_rating_0_to_5:rating} | startFrom:currentPage*pageSize | limitTo:pageSize  track by $index" ">
 			<div class="col-xs-2">
 				<products-display></products-display>
 			</div>

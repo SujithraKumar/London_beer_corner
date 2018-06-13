@@ -45,14 +45,21 @@ function MainController($scope, $rootScope, MainService) {
 	}
 
 	$scope.SelectedFeed = {};
+	$scope.ShowModal = false;
 	$scope.DetailView = function (feed) {
 
+		$scope.ShowModal = true;
 		$scope.SelectedFeed = feed;
 		$('#ViewProduct').modal('show');
 
 	}
 
 
+	$scope.closeModal = function () {
+		$scope.ShowModal = false;
+		$('#ViewProduct').modal('hide');
+
+	}
 	//paginator 
 
 	// paginator:
