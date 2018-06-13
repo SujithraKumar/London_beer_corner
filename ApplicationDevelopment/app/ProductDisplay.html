@@ -1,0 +1,97 @@
+﻿<section>
+
+	<div class="card" style="width: 6.5rem;height:9rem" ng-click="DetailView(feed)">
+
+
+		<img class="card-img-top" err-src="app/default.jpg" src="app/default.jpg" width="100" height="100">
+		<div class="card-body">
+			<h5 class="card-title text-center set-size">{{feed.beer}}</h5>
+
+		</div>
+	</div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="ViewProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="pic_area col-sm-7">
+
+					<img class="card-img-top set-margin" err-src="app/default.jpg" src="app/default.jpg" width="200" height="200">
+
+				</div>
+				<div class="txt_area col-sm-5">
+					<button type="button" class="close modal-close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+					<div>
+						<div class="user-block feed_details_header">
+							
+							<span class="username"><a href="{{SelectedFeed.image_url}}" target="_blank" class="titleCase">{{SelectedFeed.beer}}</a></span>
+						</div>
+
+
+					</div>
+					<div>
+
+						<span class="alignLeft"> Brewery : <span>{{SelectedFeed.brewery}}</span></span> <br />	 <br />
+
+						<span class="alignLeft">Size     : <span>{{SelectedFeed.size}}</span></span>	    <br /> <br />
+						<span class="alignLeft">Price    : <span>{{SelectedFeed.price}}</span></span>	    <br /><br />
+						<span class="alignLeft">Available Stock: <span>{{SelectedFeed.quantity_in_stock}}</span></span> <br />	  <br />
+						<div class="rating alignLeft">
+
+							<span> Ratings:</span>
+							<span  ng-repeat="value in  SelectedFeed.average_review_rating_0_to_5 |array " class="goldrating">☆ </span>
+						</div>
+
+
+					</div>
+
+
+
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!--<div id="ViewProduct" class="modal modal-long">
+		<div class="modal-content">
+			<div class="pic_area col-sm-7">
+
+				<img class="card-img-top" err-src="app/default.jpg" src="app/default.jpg" width="285" height="200">
+				<p ng-bind-html="$parent.GetMediaContent(SelectedComment.Media,2)"></p>
+			</div>
+
+			<div class="txt_area col-sm-5">
+				<button type="button" class="close modal-close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+				<div>
+					<div class="user-block feed_details_header">
+						<img class="img-circle" alt="User Image">
+						<span class="username"><a ] class="titleCase">sammm</a></span>
+					</div>
+
+
+				</div>
+
+
+
+
+			</div>
+		</div>
+	</div>-->
+
+</section>
+
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('.modal').modal();
+
+
+	});
+
+</script>

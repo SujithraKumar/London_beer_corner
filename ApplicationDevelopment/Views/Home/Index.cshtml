@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="MainApp">
+<head>
+	<!-- Common Meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+	<!-- Site Title -->
+	<title id="s_title">Application Development</title>
+
+	<script src="~/app/assets/js/jquery-1.11.2.min.js"></script>
+	<script src="~/app/assets/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" crossorigin="anonymous">
+	@*<link href="~/app/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+	<link href="~/app/style.css" rel="stylesheet" type="text/css" />
+	<script src="~/app/assets/js/angular.min.js"></script>
+	<script src="~/app/assets/js/angulargrid.min.js"></script>
+	<script src="~/app/module.js"></script>
+	<script src="~/app/MainController.js"></script>
+	<script src="~/app/filter.js"></script>
+	<script src="~/app/directive.js"></script>
+	<script src="~/app/MainService.js"></script>
+
+
+
+
+
+</head>
+
+<body ng-controller="MainController" class=" ">
+	<div id="toolbar">
+		<div class="alignCenter">
+			<label class="labelAlign">London Beer Corner</label>
+					
+		</div>
+
+	</div>
+	<div class="feed_item">
+		<div ng-repeat="feed in ProductsList | startFrom:currentPage*pageSize | limitTo:pageSize  track by $index" ">
+			<div class="col-xs-2">
+				<products-display></products-display>
+			</div>
+		</div>
+		<br />
+		<div class="clearfix"></div>
+		<div class="pagealign" ng-show="showPaginator">
+			<button type="button" class="btn btn-light" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><<</button>
+
+			{{currentPage+1}}/{{numberOfPages()}}
+
+			<button type="button" class="btn btn-light" ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">>></button>
+
+
+		</div>
+	</div>
+
+
+</body>
+</html>
