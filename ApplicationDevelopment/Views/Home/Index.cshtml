@@ -44,11 +44,13 @@
 		<input type="text" class="productInput" ng-model="productName" placeholder="productName" />
 		<label>Rating</label>
 		<select ng-options="item for item in Ratings " ng-model="rating"></select>
+		<label>Brewery</label>
+		<input type="text" class="productInput" ng-model="breweryName" placeholder="breweryName" />
 	</div>
 
 
 	<div class="feed_item">
-		<div ng-repeat="feed in ProductsList |filter:{beer : productName} |filter :{average_review_rating_0_to_5:rating} | startFrom:currentPage*pageSize | limitTo:pageSize  track by $index" ">
+		<div ng-repeat="feed in ProductsList |filter:{beer : productName} |filter :{average_review_rating_0_to_5:rating} |filter:{brewery : breweryName} | startFrom:currentPage*pageSize | limitTo:pageSize  track by $index" ">
 			<div class="col-xs-2">
 				<products-display></products-display>
 			</div>
