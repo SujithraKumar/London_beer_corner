@@ -2,7 +2,7 @@
 	return {
 		restrict: "E",
 		scope: false,
-		templateUrl: 'app/ProductDisplay.html',
+		templateUrl: 'app/views/ProductDisplay.html',
 		link: function ($scope, element, attrs, toaster) {
 
 		}
